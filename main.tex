@@ -1,0 +1,248 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage[colorlinks=true, citecolor=blue, linkcolor=blue, urlcolor=blue]{hyperref}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage[utf8]{inputenc}
+\usepackage[style=apa, backend=biber, maxcitenames=2, mincitenames=1]{biblatex}
+
+
+\addbibresource{references.bib}
+
+\setlength{\parindent}{2em}
+
+\geometry{
+  a4paper,
+  left=30mm,
+  right=30mm,
+  top=30mm,
+  bottom=30mm
+}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=magenta,
+  urlcolor=cyan,
+}
+
+\title{The End of Privacy: Navigating a Surveillance Society}
+\author{
+  \textbf{Team Name: Malicious People for Malice} \\
+  \\
+  \begin{tabular}{ll}
+    \textbf{Yueming (Miles) Li} & - 1450710 - \href{mailto:yuemingl3@student.unimelb.edu.au}{yuemingl3@student.unimelb.edu.au} \\
+    \textbf{Kyi Shin Khant (Skylar)} & - 1450754 - \href{mailto:kyishink@student.unimelb.edu.au}{kyishink@student.unimelb.edu.au} \\
+    \textbf{Ngoc Thanh Lam Nguyen (Lam)} & - 1450800 - \href{mailto:ngocthanhlam@student.unimelb.edu.au}{ngocthanhlam@student.unimelb.edu.au} \\
+    \textbf{Chuanmiao (Mia) Yu} & - 1354306 - \href{mailto:chuanmiao@student.unimelb.edu.au}{chuanmiao@student.unimelb.edu.au} \\
+    \textbf{Junlang (Andrew) Hu} & - 1461262 - \href{mailto:junlangh@student.unimelb.edu.au}{junlangh@student.unimelb.edu.au} \\
+  \end{tabular}
+  \\
+  \\
+  \textbf{Tutorial Time:} Wed 16:15 \\
+  \textbf{Tutor:} Mark Bloom \\
+  \textbf{University of Melbourne}
+}
+
+\date{} % To remove the date on the cover page
+
+% Custom header and footer for the document
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+
+% Abstract Page
+\newcommand{\abstractpage}{
+  \newpage
+  \section*{Abstract}
+  \doublespacing
+  
+  \singlespacing
+}
+
+% Table of Contents Page
+\newcommand{\tocpage}{
+  \newpage
+  \tableofcontents
+  \newpage
+}
+
+% Section Pages
+\newcommand{\sectionpage}[1]{
+  \newpage
+  \section{#1}
+  \doublespacing
+  \singlespacing
+}
+
+\begin{document}
+
+% Cover Page
+\begin{titlepage}
+  \centering
+  {\Huge \bfseries The End of Privacy: Navigating a Surveillance Society\par}
+  \vspace{1.5cm}
+  {\Large INFO30006 – Information Security and Privacy\par}
+  \vspace{0.5cm}
+  {\Large University of Melbourne\par}
+  \vspace{2cm}
+
+  \textbf{Team Name: Malicious People for Malice} \par
+  \vspace{1cm}
+
+  \begin{tabular}{rl}
+    \textbf{Yueming (Miles) Li} & - 1450710 - yuemingl3@student.unimelb.edu.au \\
+    \textbf{Kyi Shin Khant (Skylar)} & - 1450754 - kyishink@student.unimelb.edu.au \\
+    \textbf{Ngoc Thanh Lam Nguyen (Lam)} & - 1450800 - ngocthanhlam@student.unimelb.edu.au \\
+    \textbf{Chuanmiao (Mia) Yu} & - 1354306 - chuanmiao@student.unimelb.edu.au \\
+    \textbf{Junlang (Andrew) Hu} & - 1461262 - junlangh@student.unimelb.edu.au \\
+  \end{tabular}
+
+  \vspace{1.5cm}
+
+  \textbf{Tutorial Time: Wed 16:15} \par
+  \textbf{Tutor: Mark Bloom} \par
+  \textbf{Topic: Privacy is Dead} \par
+  \vfill
+  {\Large \today\par}
+\end{titlepage}
+
+% 设置行间距为1.5倍
+\onehalfspacing
+
+% 设置首航缩进
+\setlength{\parindent}{2em}
+
+% Abstract
+\abstractpage
+\onehalfspacing
+This paper evaluates the notion that “privacy is dead” in the digital age by examining various aspects related to users’ privacy on cyber space. It begins by exploring technical methods used to prevent data breaches, such as data anonymization techniques like k-anonymity, and the core technologies that enable them. Encryption and collaborative machine learning approaches are also discussed, emphasizing their role in safeguarding users' private information. The paper then addresses technologies that invade user privacy, highlighting the parallel evolution of methods used to attack and protect privacy. The conflict between governmental surveillance and individual privacy is examined, where governments argue that maintaining social order requires surveillance systems to track criminal activity. However, the use of these systems without proper consent erodes public trust, leaving individuals feeling that their personal privacy is violated. Finally, the paper reflects on the trade-off between privacy and the conveniences offered by modern technology, arguing that despite concerns over institutional surveillance, complete privacy may be unattainable in this era. Nevertheless, individuals can take proactive steps to protect their privacy by managing their personal data more effectively and avoiding the oversharing of sensitive information.
+
+% Table of Contents
+\tocpage
+
+% Introduction
+\sectionpage{Introduction}
+\onehalfspacing
+In today’s world, where technology plays a dominant role in daily life, the risk of a complete loss of privacy is greater than ever before. The definition of privacy has evolved throughout human history, and its meaning depends on the context. In the realm of technology and cyberspace, privacy often includes managing and controlling how one’s personal data is shared and handled. However, complete privacy goes beyond these measures, as other factors—such as surveillance, data breaches, and third-party access—also contribute to the overall challenge of safeguarding privacy. While users may exercise control over their data, full absolute privacy remains elusive due to these additional complexities. Achieving privacy in the digital age is getting more and more challenging, as users’ data is continuously collected, personal information is tracked, and actions are monitored (\cite{raab2012surveillance}).
+
+It is often argued that tracking personal information by governmental institutions is reasonable and necessary. The widespread use of personal data, video surveillance, communication interception, and biometric devices is viewed as essential for maintaining public safety. Data protection laws provide exceptions to certain rules when crime prevention, detection, and national security are at stake (\cite{raab2012surveillance}). However, there is an ongoing debate about finding the right balance between users' privacy rights and the societal benefits of crime prevention and increased efficiency in official procedures. 
+
+As the threat of personal data breaches becomes more severe, effective solutions to address these concerns must also be implemented (\cite{kan2023differential}). This paper will examine whether current privacy protection efforts are truly effective and whether it is reasonable to expect privacy in today's world, where total privacy may no longer be achievable.
+
+
+% Body Sections
+% Section 1
+\sectionpage{Privacy-Enhancing Technologies: Safeguarding Personal Data Against Privacy Leaks}
+\onehalfspacing
+In this digital age, there are lots of PETs which include both technical and organizational approaches designed to protect personal identity. From an organizational perspective, PETs provide industry guidelines that outline strategies for privacy protection. On the technical side, as the name suggests, PETs comprise a collection of technologies that safeguard individual privacy and minimize the collection of personal data by organizations. (\cite{tavani2001privacy}) Several PET methods are widely employed in privacy protection:
+ 
+\subsection{Data Anonymization}
+
+Data anonymization is an effective technique for preserving privacy. This method protects Personally Identifiable Information (PII) by concealing individuals' identities and personal details. Depending on the implementation, it can provide users with either complete anonymity or reversible pseudonymity. (\cite{shen2011privacy}) Within user data, certain combinations of features, known as quasi-identifiers, can potentially be used to uniquely identify individuals. To reduce this risk, k-anonymity has become a widely adopted data anonymization method. This technique focuses on anonymizing quasi-identifiers by ensuring that each record is identical to at least k-1 other records in the dataset. Consequently, even if a data match occurs, it becomes difficult to identify a specific individual, as the information could relate to any one of at least k individuals (\cite{murthy2019anonymization}).
+
+Five core technologies are employed in this approach to data anonymization:
+\begin{enumerate}
+    \item Generalization: This technique involves replacing or removing sensitive information with less specific data to ensure an individual's identity is no longer unique. Some original values are retained, which adds an element of confusion to the data.
+    \item Suppression: This method is applied to columns or tuples, replacing data with meaningless values to hide or remove certain parts of the information.
+    \item Swapping: This process involves randomly rearranging variables within each column to disrupt the original data structure.
+    \item Masking: This technique alters specific characters by replacing them with different characters, preserving the data format while obscuring the actual values.
+    \item Distortion: This method involves altering data in a way that is reversible using the original data, allowing for data protection during storage or transmission while maintaining the ability to recover the original information when necessary. 
+\end{enumerate}
+
+The fundamental principle of these technologies is to reduce the correlation between input and output data, thereby safeguarding user privacy while maintaining data utility. This approach effectively balances the need for data protection with the requirement for meaningful information retention.
+ 
+\subsection{Encryption}
+
+Unlike traditional privacy protection methods that depend on privacy policies and system administrators, encryption enhances data security and reduces the need to trust individuals. This is achieved by employing encryption algorithms to replace the need for third-party oversight. (\cite{balsa2022cryptography}) Encryption can be broadly categorized into two main types: symmetric and asymmetric. Symmetric encryption employs a single secret key shared between two parties to ensure communication security. As long as the secret key remains undisclosed, only authorized parties can access the information, thus preventing data leaks. In contrast, asymmetric encryption utilizes a pair of keys: a private key and a public key. Users can receive encrypted messages from the public using the public key, but only the private key can decrypt these messages, ensuring data confidentiality. Additionally, asymmetric encryption provides digital signatures to verify the identities of communicating parties, thereby preventing message tampering. The fundamental difference lies in their accessibility; the private key is exclusively owned by an individual, while the public key is openly available to everyone (\cite{maqsood2017cryptography}). A comparison of these two encryption types reveals distinct characteristics. Symmetric encryption generally employs smaller key sizes, potentially making it less secure for highly sensitive information. On the other hand, asymmetric encryption requires more computational resources when handling large volumes of data, leading to increased complexity. The selection of an appropriate encryption method is primarily determined by the specific attributes and security requirements of the data in question. Furthermore, a combination of symmetric and asymmetric encryption, known as hybrid encryption, utilizes the strengths of both methods to enhance both speed and security. One widely adopted application of this approach is end-to-end encryption (E2EE), which is commonly used in messaging applications. For instance, WhatsApp implements E2EE technology to ensure that only the sender and receiver can read or modify messages, thereby protecting user privacy even from service providers. In late 2021, WhatsApp expanded its E2EE security features, allowing users to restore their backup keys using a password, even if their device is lost. Millions of users have chosen to utilize this enhanced security measure (\cite{davies2023security}). In summary, encryption protects privacy by converting data into a coded form, ensuring only authorized parties can access the information, thus safeguarding users' personal data from unauthorized access.
+ 
+ 
+\subsection{Collaborative ML approaches}
+
+The combination of PETs with Machine Learning (ML) aims to transform sensitive data into valuable information through ML techniques while either revealing only data permitted by concerned parties or without exposing any information to third parties. Federated Learning (FL) is one of the most widely adopted Collaborative Machine Learning approaches. This method enables users to train models locally on their own devices, with only model updates being transmitted to a central server rather than raw data. As the raw data remains stored exclusively on the user's device, even if the central server is compromised, attackers cannot access users' private information, thus significantly reducing the risk of privacy breaches. In contrast to centralized training methods, Collaborative Machine Learning approaches allow models to learn cooperatively without compromising data privacy (\cite{soykan2022collaborative_ml}). Overall, these collaborative approaches to machine learning represent a significant advancement in data privacy protection. By allowing valuable insights to be gained without compromising individual privacy, they address critical concerns in the evolving landscape of data security.
+
+% Section 2
+\sectionpage{The Shatter of Privacy: Privacy-Invading and Technologies
+Crushing Through PETs}
+\onehalfspacing
+Although PETs seem able to protect most of our security, while valuable, have limitations and cannot fully protect privacy in every context. According to the article from Frontiers in Public Health, PETs like differential privacy, federated learning, and homomorphic encryption face challenges such as balancing privacy with data utility and addressing re-identification risks. The wide array of definitions, terminology, and actors make it difficult to identify sources for privacy engineering benchmarking and expertise, which complicates their consistent application and effectiveness across various data environments (\cite{jordan2022privacy}). This demonstrates the complexity and limitation of relying solely on PETs for comprehensive privacy protection.
+
+\subsection{Cracking your device and privacy: Hacking technology}
+
+One of the great threats to personal privacy is malicious hacking from others, causing the leak or even loss of sensitive data. Unfortunately, the current PETs are not perfect to prevent all the hacks. Here we are going to introduce the hacking technologies which kills privacy. A popular way of hacking is Hacking Internet of Things (IoT) devices, such as printers, poses a significant cybersecurity threat due to the often-overlooked vulnerabilities in these connected devices. Printers are increasingly being targeted by cybercriminals who exploit their security weaknesses to gain unauthorized access to sensitive information or to use them as entry points into broader networks. Many printers are managed using web-based admin consoles that frequently have default usernames and passwords, making them easy targets for attackers. Poorly secured printers can serve as gateways for hackers to gain access to a network, steal sensitive data, or even launch a ransomware attack (\cite{osibeyond2022printer}). Furthermore, modern printers store sensitive information, such as scanned documents and user credentials, which are the sensitive data of an enterprise or individuals.
+
+In the broader context of IoT hacking, the challenges are even more significant. Not only the printer, IoT devices often have limited computational power and security features, making them attractive targets for hackers. Many IoT devices, including printers, lack robust encryption or secure authentication mechanisms, which allows attackers to exploit these vulnerabilities for malicious purposes. These vulnerabilities still exist in a great number. According to a study on IoT security, the heterogeneous nature of IoT devices and the lack of a standardized security framework make them highly susceptible to a variety of attacks, including man-in-the-middle attacks, distributed denial-of-service, and unauthorized data access (\cite{radanliev2023hacking}). Hackers can infiltrate IoT networks by using known exploits or vulnerabilities, enabling them to monitor communications, steal data, or even manipulate the functionality of the devices themselves.
+
+\subsection{Unwilled Data collection, leak and surveillance Tech}
+\onehalfspacing
+Not only privacy is broken by the invading technologies. Wiretapping technology also is damaging personal privacy for the sake of surveillance, as it allows for the covert interception of private communications. Traditionally, wiretapping involved physically accessing telecommunication networks to listen in on phone calls or read text messages. “[W]iretap interfaces in telephone networks were compromised, leading to unauthorized interceptions” (\cite{bellovin2012going}). These newer methods of wiretapping enable agencies to bypass traditional security and encryption measures, directly accessing data on individual devices. The installation of malware or spyware on targeted devices can covertly monitor all forms of digital communication, from emails to social media activities, while avoiding detection by conventional network security tools (\cite{bellovin2012going}). 
+
+Also, the collection and use of user data by websites and organizations often result in significant privacy concerns, particularly when the data is collected without agreement or used for malicious purposes. While data collection is often justified to enhance user experience or personalize content, it frequently leads to privacy failures that can have far-reaching consequences for individuals. A direct example will be that after you fill in your phone on some website, you start to receive random fraud calls. Websites employ various methods to track and collect user data, including cookies, browser fingerprinting, to monitor online activities and gather detailed profiles of users. Web tracking techniques collect a variety of information, such as browsing behavior, personal preferences, or even age and income (Socket, n.d.). This data can be misused in several ways, from targeted advertising that manipulates user behavior to more illegal activities such as identity theft.
+
+Privacy concerns magnified when this data is shared or sold to third parties without users’ knowledge. “[T]he commodification of personal data and its trade in largely unregulated markets can lead to significant privacy breaches, where user data is exposed to unauthorized entities, increasing the risk of exploitation” (\cite{jiang2024privacy}). The Optus data leak in 2022 is a typical example of how user data collection can lead to severe privacy breaches. In this accident, the personal information of around 10 million customers, including names, birthdates, addresses, and contact details, was exposed by a cyberattack due to poor security. “Optus’ mishandling of customer information, such as storing data for longer than legally required, has raised significant questions about corporate responsibility and data governance” (\cite{cmaaustralia2022optus}). The breach has demonstrated how inadequate security measures can lead to massive privacy violations and significant harm to individuals whose data is compromised. There are so many invading technologies and surveillance technologies, stealing sensitive information from us, and killing privacy. 
+
+
+
+\sectionpage{The Dual Edge of Privacy-Invading Technologies: Control, Security, and Public Trust}
+\onehalfspacing
+In the digital age, privacy-invading technologies have become indispensable tools for not only cybercrimes, but also authorities, governments, and corporations alike. There are several key motivations behind their widespread use, each deeply rooted in maintaining control, ensuring security, and upholding societal order.
+
+\subsection{Power and Control}
+Governments, particularly authoritarian regimes, often use surveillance technologies to maintain control over their populations with a blatant and coercive manner. These regimes leverage advanced surveillance systems not just for purpose of maintaining social order, but also to strengthen their hold on power by systematically monitoring, censoring, and repressing any potential threats or opposition (\cite{dragu2021digital}). By employing these tools, they create an environment where dissent becomes nearly impossible without significant risk.
+
+China and Iran are often cited as the most sophisticated examples of state surveillance. The Chinese Communists Party uses a variety of privacy-invading technologies to monitor its citizens (\cite{hicks2022export}). The Great Firewall of China is a prime example, which functions as a nationwide censorship and surveillance system. This massive digital infrastructure blocks access to many foreign websites, restricts the flow of information, and monitors all internet activity within the country. Chinese authorities can track and censor social media posts, email communications, and online searches, ensuring that dissenting voices are silenced before they can reach a wide audience (\cite{romaniuk2018china}; \cite{packet2012privacy}). Iran’s Internet censorship mirrors China’s methods in many ways, utilising privacy-invasive technologies to monitor and suppress political opposition. The use of Deep Packet Inspection (DPI) allows the Iranian government to monitor citizens' online activities and intercept their communications, which is a common tactic used to identify and punish dissidents (Packet, 2012, p. 25).
+
+\subsection{National Security \& Crime Prevention}
+Privacy-invading technologies have become indispensable in the realm of national security and crime prevention, as governments seek to protect their citizens from growing threats such as terrorism, cyberattacks, and espionage. Law enforcement agencies use tools like phone tapping, location tracking, and surveillance cameras (\cite{horan2021cyber}) to catch criminals involved in activities ranging from drug trafficking to child exploitation. These technologies, including mass surveillance systems, data collection programs, and cyber monitoring tools, are used to identify and intercept potential dangers before they can manifest. Governments justify their usage as necessary to safeguard society from both domestic and international threats.
+
+For example, in the U.S., surveillance programs such as PRISM, operated by the National Security Agency (NSA), were designed to collect internet data from foreign targets but have also gathered information on U.S. citizens in the process. This presents a delicate balance between ensuring safety and protecting civil liberties, a core challenge in the modern digital age (\cite{greenwald2013nsa}). The PRISM program has sparked significant debate about the trade-off between privacy and security. While it has been a critical tool for preventing terrorist attacks and protecting national interests, it has raised concerns about the erosion of individual privacy. The exposure of PRISM by Edward Snowden in 2013 highlighted the extent of surveillance conducted by the U.S. government, leading to widespread distrust among citizens (\cite{florek2014prism}). This conflict has deepened the divide between the government’s efforts to maintain security and the public’s right to privacy. Many fear that such broad surveillance not only oversteps legal boundaries but also erodes the foundational trust that should exist between citizens and their governments, with long-term implications for democracy and civil liberties (\cite{jawaid2020privacy}).
+
+Regarding crime prevention, investigators track drug sales and child abuse content sales on the dark web, where anonymity tools like Tor are used by criminals. By analysing cryptocurrency transactions (often in Bitcoin), investigators can follow the money flow and identify marketplaces or sellers, even though the lifespan of such marketplaces is typically short (\cite{horan2021cyber}).
+
+\subsection{Conflict Between Security and Privacy}
+Privacy-invading technologies, whether used to consolidate an authoritarian regime’s control, protect national security, or prevent crime, ultimately share the same essence: the surveillance of the public. This raises a crucial and complex issue — the conflict between individual privacy and state security. Privacy, a fundamental human right (\cite{diggelmann2014privacy}), is infringed upon when governments monitor their citizens. Surveillance programs, while often justified in the name of safety, are inherently an invasion of personal freedoms.
+
+This creates a vicious cycle. As governments increase surveillance, the public becomes increasingly distrustful and seeks ways to evade such scrutiny, often turning to privacy-enhancing technologies like cryptography. However, this very action triggers further government distrust (\cite{jawaid2020privacy}). Governments, unable to monitor such activities, respond with legislation or pressure on technology providers to increase surveillance capabilities, further tightening control.
+
+Unfortunately, ordinary citizens lack the power to influence legislative processes, leaving them in a situation where their privacy remains vulnerable. While citizens might be able to shield their data from each other using privacy technologies, they remain transparent to governments and service providers. This imbalance of power means that governments hold all the explanatory authority and can collect personal data at will, leaving individuals without true privacy.
+
+
+
+
+\sectionpage{The Erosion of Privacy in the Digital Age: A Comprehensive Analysis}
+\onehalfspacing
+
+\subsection{Examining Privacy in the Digital Age}
+
+As society increasingly shifts toward a digital age, individuals are relying more heavily on the internet to connect with others and using automated processes to simplify daily tasks. To access these services, they must often accept the terms and conditions of the service provider, which involves sharing personal data. However, many users do not thoroughly read these terms, as they feel they have little choice if they wish to use the services. Even those with legal expertise often disregard these terms (\cite{ibdah2021privacy}).
+
+While these digital services provide convenience and certain protections through PETs against malicious data breaches or unauthorized access, significant risks remain. These include illegal data sharing by corporations and government surveillance as discussed above. Imagine being constantly monitored — CCTV cameras on every street and in every building, radio frequency identification (RFID) readers tracking every move, vehicles equipped with tracking chips, and phones logging every action \. Thirty years ago, the idea of being watched 24/7 was dismissed as paranoia; today, it is an undeniable reality. The erosion of privacy extends even to intellectual privacy—the protection of the thought process from external scrutiny—as more of our reading, thinking, and private communications are mediated by electronic technologies (Richards, 2013). The internet has shifted from a realm of anarchic freedom to one of pervasive surveillance and control.
+While these digital services provide convenience and certain protections through PETs against malicious data breaches or unauthorized access, significant risks remain. These include illegal data sharing by corporations and government surveillance as discussed above. Imagine being constantly monitored — CCTV cameras on every street and in every building, radio frequency identification (RFID) readers tracking every move, vehicles equipped with tracking chips, and phones logging every action \. Thirty years ago, the idea of being watched 24/7 was dismissed as paranoia; today, it is an undeniable reality. The erosion of privacy extends even to intellectual privacy—the protection of the thought process from external scrutiny—as more of our reading, thinking, and private communications are mediated by electronic technologies (Richards, 2013). The internet has shifted from a realm of anarchic freedom to one of pervasive surveillance and control.
+While these digital services provide convenience and certain protections through PETs against malicious data breaches or unauthorized access, significant risks remain. These include illegal data sharing by corporations and government surveillance as discussed above. Imagine being constantly monitored — CCTV cameras on every street and in every building, radio frequency identification (RFID) readers tracking every move, vehicles equipped with tracking chips, and phones logging every action (\cite{wood2006surveillance}). Thirty years ago, the idea of being watched 24/7 was dismissed as paranoia; today, it is an undeniable reality. The erosion of privacy extends even to intellectual privacy—the protection of the thought process from external scrutiny—as more of our reading, thinking, and private communications are mediated by electronic technologies (\cite{richards2013surveillance}). The internet has shifted from a realm of anarchic freedom to one of pervasive surveillance and control.
+
+\section{The Illusion of Privacy: Government Surveillance, Corporate Data Sharing, and Public Complacency}
+
+While all those data may not initially fall into government hands, it often ends up there, under the guise of laws claiming to serve the public good, protection, and security rather than private interests. Corporations also share data illegally with not only government entities but also other business interests. Notable examples include Facebook’s unauthorized sharing of data from 87 million users with Cambridge Analytica, and Google’s Project Nightingale, which involved secret data-sharing with Ascension, allowing at least 150 employees access to sensitive patient information (\cite{kshetri2020privacy}).
+
+Despite news of privacy breaches and massive data compromises, many people seem desensitized to them because they may be aware of these breaches, yet there is minimal public response or action to protect digital privacy. Does this indicate that privacy is no longer a top priority for them? Some still argue that people do care about privacy and want to restore their privacy. According to an IAPP report (2023), 68\% of online users express concerns about online privacy. In this context, Solove's (2021) suggestion that the framing of privacy-related questions affects people's responses and negative connotation around ‘privacy’ should be considered, as their actions often tell a different story. Achieving absolute privacy would require complete avoidance of the internet, mobile devices, and IoT technologies. Since people are accustomed to or even dependent on the convenience these technologies offer, they willingly trade privacy for convenience and social conformity (\cite{solove2020privacy_paradox}). Thus, the risk to privacy is not only due to companies secretly collecting data but also because individuals actively consent to these risks.
+
+\subsection{The Evolving Concept of Privacy and Its Limitations in the Digital Age}
+
+Some people still deny that privacy is dead. They argue that privacy is evolving, defined by the ability to control or manage who sees one's data online (\cite{ormiston2023privacy}). They point to regulations such as the General Data Protection Regulation (GDPR), which grants individuals more control over their data. However, these measures are more about protecting breached secrets (individual private information) than ensuring absolute privacy. Moreover, they have limited effectiveness; much of the breached data is already in circulation, and digital data is virtually indestructible, as it can be copied or recovered in various ways. For example, former Amazon chief scientist Andreas Weigend once claimed that although the Stasi files on his father were destroyed, the secret police reopened a file on him years later (\cite{bbc2017privacy}).
+
+Although PETs, like end-to-end encryption, can prevent service providers from accessing communications between users, they must still provide personal data to opt in these services. Based on evolved definition, some further suggest that individuals can protect their privacy by avoiding oversharing and managing their data more effectively (\cite{salem2021privacy}). Yet, individual privacy choices can have collective consequences (\cite{veliz2020privacy}). Just as a family member infected with COVID-19 can spread the virus if they do not isolate, a breach of one person's privacy can compromise the privacy of others around them. Thus, even if individuals have more control over their online data, collective privacy protection may not be achievable because most people have grown accustomed to or comfortable with sharing their data, often overlooking the risks associated with losing their privacy online.
+
+
+% Conclusion
+\sectionpage{Conclusion}
+\onehalfspacing
+In conclusion, in this technological era, personal information has become one of the most valuable assets, constantly at risk of being tracked and collected by large institutions for various purposes, such as business and politics. In response to these risks, numerous efforts have been made to protect individual privacy. The development and widespread adoption of Privacy-Enhancing Technologies (PETs) have given users a greater sense of security, as these tools aim to safeguard personal data from misuse and exploitation. However, privacy protection is not solely a technical matter; it also requires the consideration of legal frameworks and regulatory measures, which are often beyond the control of ordinary individuals. It seems that complete privacy is no longer achievable. Instead, a new form of privacy has emerged, where individuals may need to sacrifice some of their personal privacy for broader societal and individual benefits. Nonetheless, it is important to acknowledge that more comprehensive solutions may arise soon, as people become increasingly aware of the significance of privacy in the digital age and seek more effective ways to protect it.
+
+% References
+\newpage
+
+\printbibliography % Assumes you have a .bib file for references
+
+\end{document}
